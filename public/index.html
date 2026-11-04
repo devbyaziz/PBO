@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manajemen Perpustakaan</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="/"><span class="brand-icon">P</span><span>Perpustakaan</span></a>
+      <nav>
+        <p class="nav-label">NAVIGASI</p>
+        <a class="nav-link active" href="/"><span class="nav-icon">▦</span> Ringkasan</a>
+        <a class="nav-link" href="#book-list"><span class="nav-icon">▤</span> Data buku</a>
+        <a class="nav-link" href="#book-form"><span class="nav-icon">＋</span> Tambah buku</a>
+      </nav>
+      <p class="sidebar-footer">Sistem Informasi Perpustakaan</p>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div><p class="breadcrumb">HALAMAN UTAMA</p><h1>Dashboard perpustakaan</h1></div>
+        <div class="profile"><span class="online-dot"></span><span class="profile-name">Sistem aktif</span></div>
+      </header>
+
+      <section class="welcome-card">
+        <div><p class="eyebrow light">RINGKASAN</p><h2>Kelola koleksi buku<br /><span>dengan lebih mudah.</span></h2><p>Tambahkan buku dan pantau ketersediaan stok dari satu halaman.</p></div>
+        <div class="welcome-art"><span>▤</span><b>DATA<br />BUKU</b></div>
+      </section>
+
+      <section class="stats">
+        <div class="stat-card"><div class="stat-icon purple">▤</div><div><span>Jumlah judul</span><strong id="total-books">0</strong><small>judul terdaftar</small></div></div>
+        <div class="stat-card"><div class="stat-icon orange">▥</div><div><span>Jumlah stok</span><strong id="total-stock">0</strong><small>buku tersedia</small></div></div>
+        <div class="stat-card"><div class="stat-icon green">✓</div><div><span>Status aplikasi</span><strong class="online">Aktif</strong><small>berjalan normal</small></div></div>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel collection-panel">
+          <div class="panel-heading"><div><p class="eyebrow">DATA BUKU</p><h2>Daftar buku</h2></div><button id="refresh-button" class="button secondary">↻&nbsp; Muat ulang</button></div>
+          <p id="message" class="message"></p>
+          <div id="book-list" class="book-list"><p class="empty">Belum ada buku.</p></div>
+        </div>
+        <div class="panel form-panel">
+          <div class="form-heading"><span class="form-icon">＋</span><div><p class="eyebrow">DATA BUKU</p><h2>Tambah buku</h2></div></div>
+          <p class="form-intro">Isi data berikut untuk menambahkan buku.</p>
+          <form id="book-form">
+            <label>Judul buku<input name="title" required maxlength="150" placeholder="Contoh: Laskar Pelangi" /></label>
+            <label>Penulis<input name="author" required maxlength="100" placeholder="Nama penulis" /></label>
+            <div class="field-row"><label>ISBN<input name="isbn" required maxlength="20" placeholder="978-..." /></label><label>Stok<input name="stock" required type="number" min="0" value="1" /></label></div>
+            <button class="button primary" type="submit">Simpan buku <span>→</span></button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
